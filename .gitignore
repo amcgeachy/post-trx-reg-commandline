@@ -1,0 +1,9 @@
+*~
+*.bed
+*.bedpe
+*.bam
+*.sam
+*.gz
+*.bai
+*.cov
+*.fq
