@@ -9,5 +9,5 @@
 for sample in up down no_recomb post_recomb
 
 do
-    sort ${sample}_inside_orf_new.bed | cut -f1-3-,6-19 | uniq -c > ${sample}_orf_unique_new2.bed
+    sort ${sample}_inside_orf_new.bed | cut -f1-3,6-19 | uniq -c > ${sample}_orf_unique_new2.bed
 done
