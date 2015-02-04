@@ -3,7 +3,7 @@
 for sample in up down no_recomb post_recomb
 
 do
-    cut -f1-3,5-6 ${sample}_tot_sorted.bed | uniq -c > ${sample}_tot_unique.bed
+    cut -f1-3,5-6 ${sample}_tot_sorted.bed | uniq -c | awk '{print $2 "\t" $3 "\t" $4 "\t" $1 "\t" $5 "\t" $6}' > ${sample}_tot_unique.bed
 done
 
 for sample in up down no_recomb post_recomb
