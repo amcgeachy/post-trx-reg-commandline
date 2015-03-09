@@ -1,0 +1,36 @@
+This text documents endeavors to describe the workflow to go from paired end sequencing data to files for statistical analysis in R, specifically for the post-transcriptional regulator survey. Hopefully this will prove useful for future me at the very least. 
+
+1. the first step is to take the files, align them, and conver them into sam. align_paired_end_and_sam.sh does this by connecting sequencing files by their R1 and R2 pairs. as of 20150308 its built to be run in the directory with your files. i'll aim to update this in the future. 
+   1a. one option is to also align your sequence to VoBFP or the library plasmid. the appropriately named align_paired_end_and_sam* will do this. as above, this currently expects you to be in the same directory. it also expects the input to be .sam's from the previous step full of things that didn't align. the naming schema there is awful, but deal with it for now.
+2. the next step is a sam to bam conversion. sam_to_bam.sh does this (very surprising, i know). As above, needs adjusting to be run from the workflows folder rather than in the same folder as the files. 
+3. BedPe doesn't do a very good job of preserving strandedness. So we have to do a work around to preserve paired end ourselves. The sam flags are useful here. They are:
+   99
+    read paired
+    read mapped in proper pair
+    mate reverse strand
+    first in pair
+   147
+    read paired
+    read mapped in proper pair
+    read reverse strand
+    second in pair
+   83
+    read paired
+    read mapped in proper pair
+    read reverse strand
+    first in pair
+   163
+    read paired
+    read mapped in proper pair
+    mate reverse strand
+    second in pair
+We can pull the sam flags from our newly generated bams using pull_sam_flags.sh. This currently works expecting input from the same directory, but again, I'll work to change that. 
+4. We then put the two - strand (83,163) together in a joint bam called *_neg.bam and the two + strand (99,147) together in a joint bam called *_pos.bam using merge_bam.sh
+5. Now that we have reads separated by strand, we can run bedpe on each + and - file separately. bam_to_bedpe.sh will do that and give out the *_pos.bedpe and *_neg.bedpe. 
+6. We can then combine them together into one big file and sort it (for memory reasons) using combine_pos_neg_and_sort.sh
+7. The next script does MANY things.
+a. it pulls out reads with a "good" mapq quality score (>20) and outputs them to a *_quality.bed
+b. it takes the relevant columns from the *_quality.bed, sorts the file, and then uniques so we can see how many counts occur for that fragment
+c. the columns are then reordered into a canonical format for a bed for the bedtools intersect
+d. it runs bedtools intersect to find the reads that occur within a genic region
+This is the actual output to go into R! Excitement.
