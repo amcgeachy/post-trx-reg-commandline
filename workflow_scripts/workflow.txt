@@ -24,12 +24,12 @@ This text documents endeavors to describe the workflow to go from paired end seq
     read mapped in proper pair
     mate reverse strand
     second in pair
-We can pull the sam flags from our newly generated bams using pull_sam_flags.sh. This currently works expecting input from the same directory, but again, I'll work to change that. 
+We can pull the sam flags from our newly generated bams using pull_sam_flags.sh. As of 20140309 this has been updated to ask you for the file directory and file prefixes and run from the script folder. It seems to work!
 4. We then put the two - strand (83,163) together in a joint bam called *_neg.bam and the two + strand (99,147) together in a joint bam called *_pos.bam using merge_bam.sh
 5. Now that we have reads separated by strand, we can run bedpe on each + and - file separately. bam_to_bedpe.sh will do that and give out the *_pos.bedpe and *_neg.bedpe. 
-6. We want to move it from bedpe to bed again, and bed_to_bedpe.sh does this.
+6. We want to move it from bedpe to bed again, and bedpe_to_bed.sh does this.
 7. We can then combine them together into one big file and sort it (for memory reasons) using combine_pos_neg_and_sort.sh
-8. The next script does MANY things.
+8. The next script, unique_and_contained_within.sh, does MANY things.
 a. it pulls out reads with a "good" mapq quality score (>20) and outputs them to a *_quality.bed
 b. it takes the relevant columns from the *_quality.bed, sorts the file, and then uniques so we can see how many counts occur for that fragment
 c. the columns are then reordered into a canonical format for a bed for the bedtools intersect
