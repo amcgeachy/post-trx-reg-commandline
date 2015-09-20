@@ -1,5 +1,8 @@
 This text documents endeavors to describe the workflow to go from paired end sequencing data to files for statistical analysis in R, specifically for the post-transcriptional regulator survey. Hopefully this will prove useful for future me at the very least. 
 
+0. ok, the *real* first step is to copy shit over from the ftp. it will look something like this:
+   wget -m ftp://GSL_FTP:B206Stanley@cornerstone.qb3.berkeley.edu/150910_MS1
+   Which you run in the directory you want them to deposit things. You'll have to unnest it, but it's kind of a pain to try to avoid it. 
 1. the first step is to take the files, align them, and convert them into sam. align_paired_end_and_sam.sh does this by connecting sequencing files by their R1 and R2 pairs. as of 20150308 its built to be run in the directory with your files. i'll aim to update this in the future. 
    **20150611: I've made a NEW saccer_w_VoBFP bowtie2 build
    **20150613: I've made a new file, hiseq_align_paired_end_and_sam.sh, that expects nested folders (one folder per sample, multiples R1, R2 files per subfolder) as per the way data comes off the hiseq. You give it a place to find the folders with R1,R2 in them, and you give it a place to put results. 
@@ -7,7 +10,7 @@ This text documents endeavors to describe the workflow to go from paired end seq
        ./hiseq_align_paired_end_and_sam.sh 2>&1 | tee [outfile]
       This will make the results of bowtie print on your screen (so you can watch), but also stuff them into an [outfile] you give a name for. this is useful for the bowtie stats so you can look at them later, muse over your number of reads, and baffle out how the %s work out. 
    1a. the new build accepts the genome INCLUDING VoBFP. It DOES NOT run on the library plasmid. That is a step for future work since it requries modulating bowtie2 to be more tolerant of mismatches (as the library plasmid needs mismatches to become in frame and be carried through the screen). 
-2. the next step is a sam to bam conversion. sam_to_bam.sh does this (very surprising, i know). As above, needs adjusting to be run from the workflows folder rather than in the same folder as the files. 
+2. the next step is a sam to bam conversion. sam_to_bam.sh does this (very surprising, i know). This works from the remote workflows on a folder of you input at the command prop.
 3. BedPe doesn't do a very good job of preserving strandedness. So we have to do a work around to preserve paired end ourselves. The sam flags are useful here. They are:
    99
     read paired
@@ -29,7 +32,7 @@ This text documents endeavors to describe the workflow to go from paired end seq
     read mapped in proper pair
     mate reverse strand
     second in pair
-We can pull the sam flags from our newly generated bams using pull_sam_flags.sh. As of 20140309 this has been updated to ask you for the file directory and file prefixes and run from the script folder. It seems to work!
+We can pull the sam flags from our newly generated bams using pull_sam_flags.sh. As of 20140309 this has been updated to ask you for the file directory. As of 20150615 it pulls the sample names from the folder you've given it when prompted based on the .sam files present in the folder.. 
 4. We then put the two - strand (83,163) together in a joint bam called *_neg.bam and the two + strand (99,147) together in a joint bam called *_pos.bam using merge_bam.sh
 5. Now that we have reads separated by strand, we can run bedpe on each + and - file separately. bam_to_bedpe.sh will do that and give out the *_pos.bedpe and *_neg.bedpe. 
 6. We want to move it from bedpe to bed again, and bedpe_to_bed.sh does this.
