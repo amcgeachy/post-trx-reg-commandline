@@ -37,6 +37,6 @@ R2_list=''
  R2_list=`echo ${R2_list} | sed -E 's/,//'`
  echo "I am trying to do that thing."
  echo ""
- bowtie2 -p38 -x ~/saccer_w_VoBFP/saccer_w_VoBFP --un-conc ${dest_path}/${samples}_unaligned.fq -1 ${R1_list} -2 ${R2_list} -S ${dest_path}/${samples}.sam
+ bowtie2 -p38 --maxins 1000 -x ~/saccer_w_VoBFP/saccer_w_VoBFP --un-conc ${dest_path}/${samples}_unaligned.fq -1 ${R1_list} -2 ${R2_list} -S ${dest_path}/${samples}.sam
 done
 

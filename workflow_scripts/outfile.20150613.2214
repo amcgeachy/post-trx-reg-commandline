@@ -1,0 +1,72 @@
+What directory are the files located in (use absolute path)?
+
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia
+Where do you want the completed files to go? (use absolute path)
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/results
+
+Sample_NIAM007_1down
+Current sample: 1down
+
+
+
+
+
+I am trying to do that thing.
+
+18012040 reads; of these:
+  18012040 (100.00%) were paired; of these:
+    1191499 (6.62%) aligned concordantly 0 times
+    12345635 (68.54%) aligned concordantly exactly 1 time
+    4474906 (24.84%) aligned concordantly >1 times
+    ----
+    1191499 pairs aligned concordantly 0 times; of these:
+      72752 (6.11%) aligned discordantly 1 time
+    ----
+    1118747 pairs aligned 0 times concordantly or discordantly; of these:
+      2237494 mates make up the pairs; of these:
+        1983163 (88.63%) aligned 0 times
+        180028 (8.05%) aligned exactly 1 time
+        74303 (3.32%) aligned >1 times
+94.49% overall alignment rate
+Sample_NIAM007_1mid
+Current sample: 1mid
+
+
+
+
+I am trying to do that thing.
+
+gzip: /mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R1_001.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R1_002.fastq.gz: Not a directory
+gzip: /mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R2_001.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R2_002.fastq.gz: Not a directory
+22532826 reads; of these:
+  22532826 (100.00%) were paired; of these:
+    3079696 (13.67%) aligned concordantly 0 times
+    13207228 (58.61%) aligned concordantly exactly 1 time
+    6245902 (27.72%) aligned concordantly >1 times
+    ----
+    3079696 pairs aligned concordantly 0 times; of these:
+      105981 (3.44%) aligned discordantly 1 time
+    ----
+    2973715 pairs aligned 0 times concordantly or discordantly; of these:
+      5947430 mates make up the pairs; of these:
+        5568361 (93.63%) aligned 0 times
+        245829 (4.13%) aligned exactly 1 time
+        133240 (2.24%) aligned >1 times
+87.64% overall alignment rate
+Sample_NIAM007_1post
+Current sample: 1post
+
+
+
+
+
+
+
+
+
+
+
+I am trying to do that thing.
+
+gzip: /mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R1_001.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R1_002.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R1_003.fastq.gz: Not a directory
+gzip: /mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R2_001.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R2_002.fastq.gz/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/Sample_NIAM007_1down/NIAM007_1down_ATCGAC_L004_R2_003.fastq.gz: Not a directory

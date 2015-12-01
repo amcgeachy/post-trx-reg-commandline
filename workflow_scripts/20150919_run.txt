@@ -1,0 +1,166 @@
+What directory are the files located in (use absolute path)?
+
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/miseq_screen3_20150919/fastq/samples
+Where do you want the completed files to go? (use absolute path)
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/miseq_screen3_20150919/fastq/
+
+s1
+Current sample: s1
+
+I am trying to do that thing.
+
+3705970 reads; of these:
+  3705970 (100.00%) were paired; of these:
+    3192172 (86.14%) aligned concordantly 0 times
+    404232 (10.91%) aligned concordantly exactly 1 time
+    109566 (2.96%) aligned concordantly >1 times
+    ----
+    3192172 pairs aligned concordantly 0 times; of these:
+      1556454 (48.76%) aligned discordantly 1 time
+    ----
+    1635718 pairs aligned 0 times concordantly or discordantly; of these:
+      3271436 mates make up the pairs; of these:
+        2646535 (80.90%) aligned 0 times
+        68393 (2.09%) aligned exactly 1 time
+        556508 (17.01%) aligned >1 times
+64.29% overall alignment rate
+s2
+Current sample: s2
+
+I am trying to do that thing.
+
+1835073 reads; of these:
+  1835073 (100.00%) were paired; of these:
+    1472456 (80.24%) aligned concordantly 0 times
+    300639 (16.38%) aligned concordantly exactly 1 time
+    61978 (3.38%) aligned concordantly >1 times
+    ----
+    1472456 pairs aligned concordantly 0 times; of these:
+      1134714 (77.06%) aligned discordantly 1 time
+    ----
+    337742 pairs aligned 0 times concordantly or discordantly; of these:
+      675484 mates make up the pairs; of these:
+        227956 (33.75%) aligned 0 times
+        42774 (6.33%) aligned exactly 1 time
+        404754 (59.92%) aligned >1 times
+93.79% overall alignment rate
+s3
+Current sample: s3
+
+I am trying to do that thing.
+
+1000356 reads; of these:
+  1000356 (100.00%) were paired; of these:
+    875838 (87.55%) aligned concordantly 0 times
+    90990 (9.10%) aligned concordantly exactly 1 time
+    33528 (3.35%) aligned concordantly >1 times
+    ----
+    875838 pairs aligned concordantly 0 times; of these:
+      686944 (78.43%) aligned discordantly 1 time
+    ----
+    188894 pairs aligned 0 times concordantly or discordantly; of these:
+      377788 mates make up the pairs; of these:
+        192636 (50.99%) aligned 0 times
+        27001 (7.15%) aligned exactly 1 time
+        158151 (41.86%) aligned >1 times
+90.37% overall alignment rate
+s4
+Current sample: s4
+
+I am trying to do that thing.
+
+2593368 reads; of these:
+  2593368 (100.00%) were paired; of these:
+    2135523 (82.35%) aligned concordantly 0 times
+    275640 (10.63%) aligned concordantly exactly 1 time
+    182205 (7.03%) aligned concordantly >1 times
+    ----
+    2135523 pairs aligned concordantly 0 times; of these:
+      1684469 (78.88%) aligned discordantly 1 time
+    ----
+    451054 pairs aligned 0 times concordantly or discordantly; of these:
+      902108 mates make up the pairs; of these:
+        327012 (36.25%) aligned 0 times
+        91415 (10.13%) aligned exactly 1 time
+        483681 (53.62%) aligned >1 times
+93.70% overall alignment rate
+s5
+Current sample: s5
+
+I am trying to do that thing.
+
+1456580 reads; of these:
+  1456580 (100.00%) were paired; of these:
+    1273564 (87.44%) aligned concordantly 0 times
+    135580 (9.31%) aligned concordantly exactly 1 time
+    47436 (3.26%) aligned concordantly >1 times
+    ----
+    1273564 pairs aligned concordantly 0 times; of these:
+      976128 (76.65%) aligned discordantly 1 time
+    ----
+    297436 pairs aligned 0 times concordantly or discordantly; of these:
+      594872 mates make up the pairs; of these:
+        241641 (40.62%) aligned 0 times
+        41008 (6.89%) aligned exactly 1 time
+        312223 (52.49%) aligned >1 times
+91.71% overall alignment rate
+s6
+Current sample: s6
+
+I am trying to do that thing.
+
+1917430 reads; of these:
+  1917430 (100.00%) were paired; of these:
+    1697134 (88.51%) aligned concordantly 0 times
+    162868 (8.49%) aligned concordantly exactly 1 time
+    57428 (3.00%) aligned concordantly >1 times
+    ----
+    1697134 pairs aligned concordantly 0 times; of these:
+      1416593 (83.47%) aligned discordantly 1 time
+    ----
+    280541 pairs aligned 0 times concordantly or discordantly; of these:
+      561082 mates make up the pairs; of these:
+        90923 (16.20%) aligned 0 times
+        54967 (9.80%) aligned exactly 1 time
+        415192 (74.00%) aligned >1 times
+97.63% overall alignment rate
+s7
+Current sample: s7
+
+I am trying to do that thing.
+
+1333080 reads; of these:
+  1333080 (100.00%) were paired; of these:
+    1267050 (95.05%) aligned concordantly 0 times
+    48528 (3.64%) aligned concordantly exactly 1 time
+    17502 (1.31%) aligned concordantly >1 times
+    ----
+    1267050 pairs aligned concordantly 0 times; of these:
+      1148972 (90.68%) aligned discordantly 1 time
+    ----
+    118078 pairs aligned 0 times concordantly or discordantly; of these:
+      236156 mates make up the pairs; of these:
+        100172 (42.42%) aligned 0 times
+        43858 (18.57%) aligned exactly 1 time
+        92126 (39.01%) aligned >1 times
+96.24% overall alignment rate
+s8
+Current sample: s8
+
+I am trying to do that thing.
+
+1643775 reads; of these:
+  1643775 (100.00%) were paired; of these:
+    1450173 (88.22%) aligned concordantly 0 times
+    147805 (8.99%) aligned concordantly exactly 1 time
+    45797 (2.79%) aligned concordantly >1 times
+    ----
+    1450173 pairs aligned concordantly 0 times; of these:
+      1156361 (79.74%) aligned discordantly 1 time
+    ----
+    293812 pairs aligned 0 times concordantly or discordantly; of these:
+      587624 mates make up the pairs; of these:
+        192428 (32.75%) aligned 0 times
+        48749 (8.30%) aligned exactly 1 time
+        346447 (58.96%) aligned >1 times
+94.15% overall alignment rate

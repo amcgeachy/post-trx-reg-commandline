@@ -1,8 +1,14 @@
 This text documents endeavors to describe the workflow to go from paired end sequencing data to files for statistical analysis in R, specifically for the post-transcriptional regulator survey. Hopefully this will prove useful for future me at the very least. 
 
 0. ok, the *real* first step is to copy shit over from the ftp. it will look something like this:
+   wget -m ftp://user:passwd@host//path/to/files
+   with things plugged in:
    wget -m ftp://GSL_FTP:B206Stanley@cornerstone.qb3.berkeley.edu/150910_MS1
-   Which you run in the directory you want them to deposit things. You'll have to unnest it, but it's kind of a pain to try to avoid it. 
+   Which you run in the directory you want them to deposit things. You'll have to unnest it, but it's kind of a pain to try to avoid it.
+   
+   NOTE, they changed the server, user, and password. the password now has a !, which requires marking it as special so it doesn't just interpret it as a bash command. eg:
+   wget -m 'ftp://gslftp:gsl23ftp!@gslserver.qb3.berkeley.edu/151125_MS1'
+   
 1. the first step is to take the files, align them, and convert them into sam. align_paired_end_and_sam.sh does this by connecting sequencing files by their R1 and R2 pairs. as of 20150308 its built to be run in the directory with your files. i'll aim to update this in the future. 
    **20150611: I've made a NEW saccer_w_VoBFP bowtie2 build
    **20150613: I've made a new file, hiseq_align_paired_end_and_sam.sh, that expects nested folders (one folder per sample, multiples R1, R2 files per subfolder) as per the way data comes off the hiseq. You give it a place to find the folders with R1,R2 in them, and you give it a place to put results. 

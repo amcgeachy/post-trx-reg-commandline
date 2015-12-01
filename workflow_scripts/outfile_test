@@ -1,0 +1,27 @@
+What directory are the files located in (use absolute path)?
+
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/test
+Where do you want the completed files to go? (use absolute path)
+/mnt/ingolialab/mcgeachy/post_trx_reg_screen/data_20150610/Project_Ingolia/nr_results
+
+Sample_NIAM007_2up
+Current sample: 2up
+
+
+I am trying to do that thing.
+
+5164228 reads; of these:
+  5164228 (100.00%) were paired; of these:
+    3775430 (73.11%) aligned concordantly 0 times
+    1099233 (21.29%) aligned concordantly exactly 1 time
+    289565 (5.61%) aligned concordantly >1 times
+    ----
+    3775430 pairs aligned concordantly 0 times; of these:
+      2241092 (59.36%) aligned discordantly 1 time
+    ----
+    1534338 pairs aligned 0 times concordantly or discordantly; of these:
+      3068676 mates make up the pairs; of these:
+        1670897 (54.45%) aligned 0 times
+        641951 (20.92%) aligned exactly 1 time
+        755828 (24.63%) aligned >1 times
+83.82% overall alignment rate
