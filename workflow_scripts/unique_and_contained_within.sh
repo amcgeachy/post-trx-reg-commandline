@@ -11,5 +11,5 @@ done
 
 for sample in `ls ${proj_path}/*.sam`
  do sample=`basename --suffix=.sam ${sample}`
-    bedtools intersect -wao -sortout -s -f 1 -a ${proj_path}/${sample}_tot_unique.bed -b /mnt/ingolialab/mcgeachy/saccer3/saccer3.bed > ${proj_path}/${sample}_inside_orf_unique.bed
+    bedtools intersect -wao -sortout -s -f 1 -a ${proj_path}/${sample}_tot_unique.bed -b /mnt/ingolialab/mcgeachy/saccer3/saccer3.bed -nonamecheck > ${proj_path}/${sample}_inside_orf_unique.bed
 done

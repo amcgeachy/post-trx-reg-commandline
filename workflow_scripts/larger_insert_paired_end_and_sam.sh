@@ -19,7 +19,8 @@ echo
 for names in `ls ${proj_path}/`
 
  do echo ${names}
- samples=`echo ${names} | cut -d_ -f3`
+    samples=`echo ${names}`
+     #| cut -d_ -f3`
  echo "Current sample: ${samples}"
 
 R1_list=''

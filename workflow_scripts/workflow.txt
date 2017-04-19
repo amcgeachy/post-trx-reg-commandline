@@ -10,12 +10,15 @@ This text documents endeavors to describe the workflow to go from paired end seq
    wget -m 'ftp://gslftp:gsl23ftp!@gslserver.qb3.berkeley.edu/151125_MS1'
    
 1. the first step is to take the files, align them, and convert them into sam. align_paired_end_and_sam.sh does this by connecting sequencing files by their R1 and R2 pairs. as of 20150308 its built to be run in the directory with your files. i'll aim to update this in the future. 
-   **20150611: I've made a NEW saccer_w_VoBFP bowtie2 build
-   **20150613: I've made a new file, hiseq_align_paired_end_and_sam.sh, that expects nested folders (one folder per sample, multiples R1, R2 files per subfolder) as per the way data comes off the hiseq. You give it a place to find the folders with R1,R2 in them, and you give it a place to put results. 
-     - I suggest running it as such: 
-       ./hiseq_align_paired_end_and_sam.sh 2>&1 | tee [outfile]
-      This will make the results of bowtie print on your screen (so you can watch), but also stuff them into an [outfile] you give a name for. this is useful for the bowtie stats so you can look at them later, muse over your number of reads, and baffle out how the %s work out. 
-   1a. the new build accepts the genome INCLUDING VoBFP. It DOES NOT run on the library plasmid. That is a step for future work since it requries modulating bowtie2 to be more tolerant of mismatches (as the library plasmid needs mismatches to become in frame and be carried through the screen). 
+   1a. the new build accepts the genome INCLUDING VoBFP. It DOES NOT run on the library plasmid. That is a step for future work since it requries modulating bowtie2 to be more tolerant of mismatches (as the library plasmid needs mismatches to become in frame and be carried through the screen).
+   **20150920: increased the size of inserts that would be expected, as we're getting larger inserts over all. and bowtie throws out stuff that it considers too large; includes previous edits to include VoBFP. that's:
+    * to get into nested folders, build folder names like:
+     for name in $(ls *.gz | cut -d_ -f1 | uniq); do mkdir $name; done
+     * and populate folders like so:
+     for name in $(ls *.gz | cut -d_ -f1 | uniq); do mv $name*.gz $name/; done
+     * to run the file
+     larger_insert_paired_end_and_sam.sh 2>&1 | tee [outfile]
+       you probably should still do the 2>&1 | tee [outfile] to have a record of stuff.
 2. the next step is a sam to bam conversion. sam_to_bam.sh does this (very surprising, i know). This works from the remote workflows on a folder of you input at the command prop.
 3. BedPe doesn't do a very good job of preserving strandedness. So we have to do a work around to preserve paired end ourselves. The sam flags are useful here. They are:
    99
@@ -44,8 +47,8 @@ We can pull the sam flags from our newly generated bams using pull_sam_flags.sh.
 6. We want to move it from bedpe to bed again, and bedpe_to_bed.sh does this.
 7. We can then combine them together into one big file and sort it (for memory reasons) using combine_pos_neg_and_sort.sh
 8. The next script, unique_and_contained_within.sh, does MANY things.
-a. it pulls out reads with a "good" mapq quality score (>20) and outputs them to a *_quality.bed
-b. it takes the relevant columns from the *_quality.bed, sorts the file, and then uniques so we can see how many counts occur for that fragment
-c. the columns are then reordered into a canonical format for a bed for the bedtools intersect
-d. it runs bedtools intersect to find the reads that occur within a genic region
+   a. it pulls out reads with a "good" mapq quality score (>20) and outputs them to a *_quality.bed
+   b. it takes the relevant columns from the *_quality.bed, sorts the file, and then uniques so we can see how many counts occur for that fragment
+   c. the columns are then reordered into a canonical format for a bed for the bedtools intersect
+   d. it runs bedtools intersect to find the reads that occur within a genic region
 This is the actual output to go into R! Excitement.
